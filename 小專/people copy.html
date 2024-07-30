@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css1/rest.css">
+    <link rel="stylesheet" href="./css1/sty.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        tr th ,tr td {
+    border: 2px solid black;
+    vertical-align:middle;
+    text-align: center;
+    width: 100px;
+}
+    </style>
+</head>
+
+<body>
+    <header class="container1 ">
+        <h1 style="float: left;
+    width: 25%;
+    margin-left: 30px;"><a href="./home.html"><img class="img1" src="./image/logo.png" alt=""></a></h1>
+        <nav>
+            <ul>
+
+                <li><a href="./news.html">最新消息</a></li>
+                <li><a href="./people copy.html">角色</a></li>
+
+                <li><a href="./shop copy.html">周邊商品</a></li>
+                <li><a href="./user.html">會員登入</a></li>
+            </ul>
+        </nav>
+        <div class="icon">
+            <a href="https://www.facebook.com/HonkaiStarRail.CHT?locale=zh_TW"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/honkaistarrail/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCzuIcjh24KYVZBhYhcFYCrQ"><i class="bi bi-youtube"></i></a>
+        </div>
+    </header>
+    <div class="container pt-60">
+
+        <button class="btn btn-primary" onclick="hide('虛無')">虛無
+
+        </button>
+        <button class="btn btn-primary" onclick="hide('巡獵')">巡獵
+        </button>
+        <button class="btn btn-primary" onclick="hide('毀滅')">毀滅
+        </button>
+        <button class="btn btn-primary" onclick="hide('同諧')">同諧
+        </button>
+        <button class="btn btn-primary" onclick="hide('智識')">智識
+        </button>
+        <button class="btn btn-primary" onclick="hide('存護')">存護
+        </button>
+        <button class="btn btn-primary" onclick="hide('豐饒')">豐饒
+        </button>
+        <button class="btn btn-primary" onclick="vs()">全部角色
+        </button>
+
+    </div>
+ 
+    <div class="container clearfix">
+        <div class="float-left white all  智識 " onclick="q('uan')">景元
+           <img src="./image/景元.png" alt="">
+        </div>
+        <div class="float-left white all 虛無 " onclick="q('kfk')">卡芙卡
+            <img src="./image/卡芙卡.png" alt="">
+        </div>
+        <div class="float-left white all 豐饒" onclick="q('白露')">白露<img src="./image/白露.png" alt=""></div>
+        <div class="float-left white all 虛無" onclick="q('黃泉')">黃泉<img src="./image/黃泉.png" alt=""></div>
+        <div class="float-left white all 毀滅" onclick="q('丹恒')">丹恒飲月<img src="./image/丹恒飲月.png" alt=""></div>
+        <div class="float-left white all 毀滅" onclick="q('刃')">刃<img src="./image/刃.png" alt=""></div>
+
+        <div class="float-left white all 毀滅 " onclick="q('克拉拉')">克拉拉<img src="./image/克拉拉.png" alt=""></div>
+        <div class="float-left white all 智識 " onclick="q('姬子')">姬子<img src="./image/姬子.png" alt=""></div>
+        <div class="float-left white all 同諧 " onclick="q('布洛妮婭')">布洛妮婭<img src="./image/布洛妮婭.png" alt=""></div>
+        <div class="float-left white all 巡獵 " onclick="q('希兒')">希兒<img src="./image/希兒.png" alt=""></div>
+        <div class="float-left white all 巡獵 " onclick="q('彥卿')">彥卿<img src="./image/彥卿.png" alt=""></div>
+        <div class="float-left white all 巡獵 " onclick="q('托帕')">托帕<img src="./image/托帕.png" alt=""></div>
+        <div class="float-left white all 存護 " onclick="q('杰帕德')">杰帕德<img src="./image/杰帕德.png" alt=""></div>
+        <div class="float-left white all 虛無 " onclick="q('瓦爾特')">瓦爾特<img src="./image/瓦爾特.png" alt=""></div>
+        <div class="float-left white all 巡獵 " onclick="q('真理醫生')">真理醫生<img src="./image/真理醫生.png" alt=""></div>
+        <div class="float-left white all 同諧 " onclick="q('知更鳥')">知更鳥<img src="./image/知更鳥dsdsd.png" alt=""></div>
+        <div class="float-left white all 存護 " onclick="q('砂金')">砂金<img src="./image/砂金.png" alt=""></div>
+        <div class="float-left white all 存護 " onclick="q('符玄')">符玄<img src="./image/符玄.png" alt=""></div>
+        <div class="float-left white all 豐饒 " onclick="q('羅剎')">羅剎<img src="./image/羅剎.png" alt=""></div>
+        <div class="float-left white all 同諧 " onclick="q('花火')">花火<img src="./image/花火.png" alt=""></div>
+        <div class="float-left white all 虛無 " onclick="q('黑天鵝')">黑天鵝<img src="./image/黑天鵝.png" alt=""></div>
+        <div class="float-left white all 同諧 " onclick="q('阮梅')">阮梅<img src="./image/阮梅.png" alt=""></div>
+        <div class="float-left white all 毀滅 " onclick="q('鏡流')">鏡流<img src="./image/鏡流.png" alt=""></div>
+        <div class="float-left white all 虛無 " onclick="q('銀狼')">銀狼<img src="./image/銀狼.png" alt=""></div>
+        <div class="float-left white all 智識 " onclick="q('銀枝')">銀枝<img src="./image/銀枝.png" alt=""></div>
+        <div class="float-left white all 豐饒 " onclick="q('藿藿')">藿藿<img src="./image/藿藿.png" alt=""></div>
+
+
+    </div>
+    <div>
+        <dialog id="uan">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">毀滅焚骨的大公<img class="w-100" src="./image/105px-毁烬焚骨的大公.png" alt=""></td>
+                    <td>暴擊率,暴擊傷害</td>
+                    <td>速度,攻擊</td>
+                    <td class="w-150px">停轉的薩爾索圖<img class="w-100" src="./image/105px-停转的萨尔索图.png" alt=""></td>
+                    <td>雷屬傷害</td>
+                    <td>攻擊</td>
+                </tr>
+            </table>
+            <button class="close" >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="kfk">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">幽鎖深牢的繫囚<img class="w-100" src="./image/105px-幽锁深牢的系囚.png" alt=""></td>
+                    <td>攻擊</td>
+                    <td>速度,攻擊</td>
+                    <td class="w-150px">蒼穹戰線格拉默<img class="w-100" src="./image/105px-苍穹战线格拉默 (1).png" alt=""></td>
+                    <td>雷屬傷害</td>
+                    <td>攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="白露">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">雲無留跡的過客<img class="w-100" src="./image/105px-云无留迹的过客.png" alt=""></td>
+                    <td>治療量</td>
+                    <td>速度,生命</td>
+                    <td class="w-150px">不老者的仙舟<img class="w-100" src="./image/105px-不老者的仙舟.png" alt=""></td>
+                    <td>生命</td>
+                    <td>生命,能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="黃泉">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">死水深潛的先驅<img class="w-100" src="./image/105px-死水深潜的先驱.png" alt=""></td>
+                    <td>暴擊率,暴擊傷害</td>
+                    <td>攻擊</td>
+                    <td class="w-150px">出雲顯世與高天神國<img class="w-100" src="./image/105px-出云显世与高天神国.png" alt=""></td>
+                    <td>雷屬傷害,攻擊</td>
+                    <td>攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="丹恒">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">盜賊荒漠的廢土客<img class="w-100" src="./image/105px-盗匪荒漠的废土客.png" alt=""></td>
+                    <td>暴擊率,暴擊傷害</td>
+                    <td>攻擊</td>
+                    <td class="w-150px">繁星競技場<img class="w-100" src="./image/105px-繁星竞技场.png" alt=""></td>
+                    <td>虛數傷害</td>
+                    <td>攻擊,能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="刃">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">寶命長存的蒔者<img class="w-100" src="./image/105px-宝命长存的莳者.png" alt=""></td>
+                    <td>暴擊率,暴擊傷害</td>
+                    <td>生命</td>
+                    <td class="w-150px">繁星競技場<img class="w-100" src="./image/105px-繁星竞技场.png" alt=""></td>
+                    <td>風屬傷害</td>
+                    <td>生命</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="克拉拉">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">街頭出身的拳王<img class="w-100" src="./image/105px-街头出身的拳王.png" alt=""></td>
+                    <td>暴擊率,暴擊傷害</td>
+                    <td>攻擊</td>
+                    <td class="w-150px">停轉的薩爾索圖<img class="w-100" src="./image/105px-停转的萨尔索图.png" alt=""></td>
+                    <td>物理傷害</td>
+                    <td>攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="姬子">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">毀滅焚骨的大公<img class="w-100" src="./image/105px-毁烬焚骨的大公.png" alt=""></td>
+                    <td>暴擊率</td>
+                    <td>攻擊,速度</td>
+                    <td class="w-150px">停轉的薩爾索圖<img class="w-100" src="./image/105px-停转的萨尔索图.png" alt=""></td>
+                    <td>火屬傷害</td>
+                    <td>攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="布洛妮婭">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">晨昏交界的翔鷹<img class="w-100" src="./image/105px-晨昏交界的翔鹰.png" alt=""></td>
+                    <td>暴擊傷害</td>
+                    <td>速度</td>
+                    <td class="w-150px">折斷的龍骨<img class="w-100" src="./image/105px-折断的龙骨.png" alt=""></td>
+                    <td>都可</td>
+                    <td>能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="希兒">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">繁星璀璨的天才<img class="w-100" src="./image/105px-繁星璀璨的天才.png" alt=""></td>
+                    <td>暴擊率,暴擊傷害</td>
+                    <td>速度,攻擊</td>
+                    <td class="w-150px">蒼穹戰線格拉默<img class="w-100" src="./image/105px-苍穹战线格拉默 (1).png" alt=""></td>
+                    <td>量子傷害,攻擊</td>
+                    <td>攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="彥卿">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">蜜林臥雪的獵人<img class="w-100" src="./image/105px-密林卧雪的猎人.png" alt=""></td>
+                    <td>暴擊傷害</td>
+                    <td>速度,攻擊</td>
+                    <td class="w-150px">蒼穹戰線格拉默<img class="w-100" src="./image/105px-苍穹战线格拉默 (1).png" alt=""></td>
+                    <td>冰屬傷害,攻擊</td>
+                    <td>攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="托帕">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">毀滅焚骨的大公<img class="w-100" src="./image/105px-毁烬焚骨的大公.png" alt=""></td>
+                    <td>暴擊率,暴擊傷害</td>
+                    <td>速度,攻擊</td>
+                    <td class="w-150px">停轉的薩爾索圖<img class="w-100" src="./image/105px-停转的萨尔索图.png" alt=""></td>
+                    <td>火屬傷害,攻擊</td>
+                    <td>攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="杰帕德">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">淨庭教宗的聖騎士<img class="w-100" src="./image/105px-净庭教宗的圣骑士.png" alt=""></td>
+                    <td>防禦</td>
+                    <td>速度,防禦</td>
+                    <td class="w-150px">築城者的貝洛伯格<img class="w-100" src="./image/105px-筑城者的贝洛伯格.png" alt=""></td>
+                    <td>防禦</td>
+                    <td>能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="瓦爾特">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">盜賊荒漠的廢土客<img class="w-100" src="./image/105px-盗匪荒漠的废土客.png" alt=""></td>
+                    <td>暴擊率,暴擊傷害</td>
+                    <td>速度,攻擊</td>
+                    <td class="w-150px">泛銀河商業公司<img class="w-100" src="./image/105px-泛银河商业公司.png" alt=""></td>
+                    <td>虛數傷害</td>
+                    <td>能量恢復,攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="真理醫生">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">死水深潛的先驅<img class="w-100" src="./image/105px-死水深潜的先驱.png" alt=""></td>
+                    <td>暴擊率,暴擊傷害</td>
+                    <td>速度,攻擊</td>
+                    <td class="w-150px">停轉的薩爾索圖<img class="w-100" src="./image/105px-停转的萨尔索图.png" alt=""></td>
+                    <td>虛數傷害,攻擊</td>
+                    <td>能量恢復,攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="知更鳥">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">幽鎖深牢的繫囚<img class="w-100" src="./image/105px-幽锁深牢的系囚.png" alt=""></td>
+                    <td>攻擊</td>
+                    <td>攻擊</td>
+                    <td class="w-150px">生命的翁瓦克<img class="w-100" src="./image/105px-生命的翁瓦克.png" alt=""></td>
+                    <td>物理傷害,攻擊</td>
+                    <td>能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="砂金">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">淨庭教宗的聖騎士<img class="w-100" src="./image/105px-净庭教宗的圣骑士.png" alt=""></td>
+                    <td>防禦</td>
+                    <td>速度</td>
+                    <td class="w-150px">折斷的龍骨<img class="w-100" src="./image/105px-折断的龙骨.png" alt=""></td>
+                    <td>防禦</td>
+                    <td>防禦</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="符玄">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">寶命長存的蒔者<img class="w-100" src="./image/105px-宝命长存的莳者.png" alt=""></td>
+                    <td>生命</td>
+                    <td>速度</td>
+                    <td class="w-150px">折斷的龍骨<img class="w-100" src="./image/105px-折断的龙骨.png" alt=""></td>
+                    <td>生命</td>
+                    <td>生命</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="羅剎">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">雲無留跡的過客<img class="w-100" src="./image/105px-云无留迹的过客.png" alt=""></td>
+                    <td>治療量</td>
+                    <td>速度</td>
+                    <td class="w-150px">折斷的龍骨<img class="w-100" src="./image/105px-折断的龙骨.png" alt=""></td>
+                    <td>攻擊</td>
+                    <td>能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="花火">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">晨昏交界的翔鷹<img class="w-100" src="./image/105px-晨昏交界的翔鹰.png" alt=""></td>
+                    <td>暴擊傷害</td>
+                    <td>速度</td>
+                    <td class="w-150px">折斷的龍骨<img class="w-100" src="./image/105px-折断的龙骨.png" alt=""></td>
+                    <td>都可</td>
+                    <td>能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="黑天鵝">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">幽鎖深牢的繫囚<img class="w-100" src="./image/105px-幽锁深牢的系囚.png" alt=""></td>
+                    <td>效果命中,攻擊</td>
+                    <td>攻擊,速度</td>
+                    <td class="w-150px">蒼穹戰線格拉默<img class="w-100" src="./image/105px-苍穹战线格拉默.png" alt=""></td>
+                    <td>風屬傷害</td>
+                    <td>攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="阮梅">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">流星追跡的怪盜<img class="w-100" src="./image/105px-流星追迹的怪盗.png" alt=""></td>
+                    <td>都可</td>
+                    <td>速度</td>
+                    <td class="w-150px">生命的翁瓦克<img class="w-100" src="./image/105px-生命的翁瓦克.png" alt=""></td>
+                    <td>都可</td>
+                    <td>能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="鏡流">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">密林卧雪的猎人<img class="w-100" src="./image/105px-密林卧雪的猎人.png" alt=""></td>
+                    <td>暴擊傷害</td>
+                    <td>速度,攻擊</td>
+                    <td class="w-150px">繁星競技場<img class="w-100" src="./image/105px-繁星竞技场.png" alt=""></td>
+                    <td>冰屬傷害</td>
+                    <td>攻擊</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="銀狼">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">野穗伴行的快槍手<img class="w-100" src="./image/105px-野穗伴行的快枪手.png" alt=""></td>
+                    <td>效果命中</td>
+                    <td>速度</td>
+                    <td class="w-150px">生命的翁瓦克<img class="w-100" src="./image/105px-生命的翁瓦克.png" alt=""></td>
+                    <td>任意</td>
+                    <td>能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="銀枝">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">街頭出身的拳王<img class="w-100" src="./image/105px-街头出身的拳王.png" alt=""></td>
+                    <td>暴擊率,暴擊傷害</td>
+                    <td>速度,攻擊</td>
+                    <td class="w-150px">停轉的薩爾索圖<img class="w-100" src="./image/105px-停转的萨尔索图.png" alt=""></td>
+                    <td>物理傷害</td>
+                    <td>能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <div>
+        <dialog id="藿藿">
+            <table style="border: 2px solid black; text-align: center;">
+                <tr>
+                    <th></th>
+                    <th>外圈</th>
+
+                    <th>衣服</th>
+
+                    <th>鞋子</th>
+                    <th>內圈</th>
+                    <th>位面球</th>
+                    <th>繩子</th>
+                </tr>
+                <tr>
+                    <th>推薦屬性</th>
+                    <td class="w-150px">雲無留跡的過客<img class="w-100" src="./image/105px-云无留迹的过客.png" alt=""></td>
+                    <td>治療量</td>
+                    <td>速度</td>
+                    <td class="w-150px">不老者的仙舟<img class="w-100" src="./image/105px-不老者的仙舟.png" alt=""></td>
+                    <td>生命</td>
+                    <td>能量恢復</td>
+                </tr>
+            </table>
+            <button class="close"  >close</button>
+        </dialog>
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+    <footer class="bgblack">
+        <div class="container1 clearfix">
+            <a href="./home.html"><img src="./image/logo.png" alt="" class="float-left clearfix w-20"></a>
+
+            <div>
+
+                <ul>
+                    <li><a href="./news.html" class="color-w">最新消息</a></li>
+                    <li><a href="./people copy.html" class="color-w">角色</a></li>
+
+                    <li><a href="./shop copy.html" class="color-w">周邊商品</a></li>
+                    <a id="download" href=""><i class="bi bi-google-play" style="margin-left: 20%;">
+                            <p>for androic</p>
+                        </i></a>
+                    <a href=""><i class="bi bi-apple">
+                            <p>for apple</p>
+                        </i></a>
+                    <a href=""><i class="bi bi-windows">
+                            <p>for windows</p>
+                        </i></a>
+                </ul>
+            </div>
+
+            <img src="./image/輔12.jpg" alt="" class="float-right clearfix w-10">
+
+        </div>
+        <div class="dsf">
+
+            <p class="color-w font-size-small margin-auto margin-bottom">
+                本遊戲為免費使用,遊戲內另提供虛擬貨幣及物品等付費服務。請注意遊戲時間避免沉迷。本遊戲部分情節涉及暴力。</p>
+        </div>
+
+    </footer>
+
+    <a href="#download" class="dl">下載</a>
+    <script>
+        // function hide() {
+        //     let elements = document.getElementsByClassName("all");
+
+        //     for (let i = 0; i < elements.length; i++) {
+        //         elements[i].style.display= "none";
+        //     }
+
+
+        // }
+        function vs() {
+            var elements = document.getElementsByClassName("all");
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].style.display == "none") {
+                    elements[i].style.display = "";
+                }
+            }
+
+
+        }
+
+        function hide(cate) {
+
+            vs()
+            // 抓 all
+            var elements = document.getElementsByClassName("all");
+
+            // 逐個跑 all
+            for (let element of elements) {
+                if (!element.className.includes(cate))
+                    element.style.display = "none";
+            }
+        }
+        // function q(ff) {
+           
+        //     var jin = document.getElementById(ff);
+        //     var ccc = document.querySelector('.close')
+            
+        //     jin.showModal();
+        //     ccc.addEventListener("click",function(){
+                
+        //         jin.close();
+        //     })
+        // }
+        function q(ff) {
+           
+           var jin = document.getElementById(ff);
+           var ccc = document.getElementsByClassName('close')
+           jin.showModal();
+          
+         for (let m = 0; m < ccc.length; m++) {
+            
+                ccc[m].addEventListener("click",function(){
+                    jin.close()
+                })
+            }
+            
+         }
+       
+     
+        
+       
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

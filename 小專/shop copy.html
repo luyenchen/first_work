@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css1/rest.css">
+    <link rel="stylesheet" href="./css1/sty.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        p{
+    color:white ;
+    background-color: black;
+}
+label{color: white;}
+span{color: white;}
+    </style>
+</head>
+
+<body>
+    <header class="container1">
+        <h1 style="float: left;
+    width: 25%;
+    margin-left: 30px;"><a href="./home.html"><img class="img1" src="./image/logo.png" alt=""></a></h1>
+        <nav>
+            <ul>
+
+                <li><a href="./news.html">最新消息</a></li>
+                <li><a href="./people copy.html">角色</a></li>
+                
+                <li><a href="./shop copy.html">周邊商品</a></li>
+                <li><a href="./user.html">會員登入</a></li>
+            </ul>
+        </nav>
+        <div class="icon">
+            <a href="https://www.facebook.com/HonkaiStarRail.CHT?locale=zh_TW"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/honkaistarrail/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCzuIcjh24KYVZBhYhcFYCrQ"><i class="bi bi-youtube"></i></a>
+        </div>
+    </header>
+    <div class="product-container mt-60" id="products" style="margin-left: 5%;">
+        
+    </div>
+    <button onclick="toggleCart()">購物車</button>
+    <div id="cart">
+        
+        
+    </div>
+    <footer class="bgblack">
+        <div class="container1 clearfix">
+            <a href=""><img src="./image/logo.png" alt="" class="float-left clearfix w-20"></a>
+
+            <div>
+
+                <ul>
+                    <li><a href="./news.html" class="color-w ">最新消息</a></li>
+                    <li><a href="./people copy.html" class="color-w ">角色</a></li>
+                    
+                    <li><a href="" class="color-w ">周邊商品</a></li>
+                   
+                </ul>
+            </div>
+            <a id="download" href=""><i class="bi bi-google-play" style="margin-left: 20%;">
+                    <p>for androic</p>
+                </i></a>
+            <a href=""><i class="bi bi-apple">
+                    <p>for apple</p>
+                </i></a>
+            <a href=""><i class="bi bi-windows">
+                    <p>for windows</p>
+                </i></a>
+
+            <img src="./image/輔12.jpg" alt="" class="float-right clearfix w-10">
+
+        </div>
+        <div class="dsf">
+
+            <p class="color-w font-size-small margin-auto margin-bottom">
+                本遊戲為免費使用,遊戲內另提供虛擬貨幣及物品等付費服務。請注意遊戲時間避免沉迷。本遊戲部分情節涉及暴力。</p>
+        </div>
+
+    </footer>
+    <script>
+        
+        var products = [
+            { id: 1, name: "開拓者毛絨手偶-開拓者（男）", price: 1000, image: "./image/玩偶.jpg" },
+            { id: 2, name: "開拓者毛絨手偶-開拓者（女）", price: 1000, image: "./image/玩偶1.jpg" },
+            { id: 3, name: "發車倒計時系列徽章-黑塔", price: 120, image: "./image/徽章1.jpg" },
+            { id: 4, name: "發車倒計時系列徽章-景元", price: 120, image: "./image/徽章2.jpg" },
+            { id: 5, name: "發車倒計時系列徽章-姬子", price: 120, image: "./image/徽章3.jpg" },
+            { id: 6, name: "發車倒計時系列徽章-布洛妮婭", price: 120, image: "./image/徽章6.jpg" },
+            { id: 7, name: "發車倒計時系列流沙吊飾-卡芙卡", price: 370, image: "./image/吊飾1.jpg" },
+            { id: 8, name: "發車倒計時系列流沙吊飾-三月七", price: 370, image: "./image/吊飾2.jpg" },
+            { id: 9, name: "角色立繪系列吊飾-巡獵-希兒", price: 280, image: "./image/吊飾3.jpg" }
+        ];
+
+      
+        var cart = {};
+
+        
+        function renderProducts() {
+            var productsContainer = document.getElementById('products');
+            productsContainer.innerHTML = '';
+            products.forEach(function(product) {
+                var productElement = document.createElement('div');
+                productElement.classList.add('product');
+                productElement.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <img src="${product.image}" alt="${product.name}">
+                    <span>價格: $${product.price}</span><br>
+                    <label for="quantity-${product.id}">數量:</label>
+                    <input type="number" id="quantity-${product.id}" value="1" min="1" class="w-20">
+                    <button class="shopbtn" data-hover="加入購物車" onclick="addToCart(${product.id})"><div><i class="bi bi-cart4"></i></div></button>
+                `;
+                productsContainer.appendChild(productElement);
+            });
+        }
+
+        
+        function renderCart() {
+    var cartContainer = document.getElementById('cart');
+    cartContainer.innerHTML = '';
+    var totalPrice = 0;
+    for (var productId in cart) {
+        var item = cart[productId];
+        var product = item.product;
+        var quantity = item.quantity;
+        var productElement = document.createElement('div');
+        productElement.classList.add('cart-item');
+        productElement.innerHTML = `
+            <p>${product.name} - 價格: $${product.price * quantity}</p>
+            <label for="quantity-cart-${product.id}">數量:</label>
+            <input type="number" id="quantity-cart-${product.id}" value="${quantity}" min="1" onchange="updateCartItem(${product.id}, this.value)">
+            <button onclick="removeFromCart(${product.id})">删除</button>
+        `;
+        cartContainer.appendChild(productElement);
+        totalPrice += product.price * quantity;
+    }
+    cartContainer.innerHTML += `<h3>總計: $${totalPrice}</h3>`;
+    
+    
+    var checkoutButton = document.createElement('button');
+    checkoutButton.textContent = '結帳';
+    checkoutButton.addEventListener('click', function() {window.location.href = './home.html'
+        
+    });
+    cartContainer.appendChild(checkoutButton);
+}
+
+
+       
+        function addToCart(productId) {
+            var product = products.find(p => p.id === productId);
+            var quantityInput = document.getElementById(`quantity-${productId}`);
+            var quantity = parseInt(quantityInput.value);
+
+            if (product && quantity > 0) {
+                if (cart[productId]) {
+                    cart[productId].quantity += quantity;
+                } else {
+                    cart[productId] = {
+                        product: product,
+                        quantity: quantity
+                    };
+                }
+                renderCart();
+                document.getElementById('cart').style.display = 'block'; // 显示购物车
+            }
+        }
+
+      
+        function updateCartItem(productId, newQuantity) {
+            var quantity = parseInt(newQuantity);
+            if (quantity > 0) {
+                cart[productId].quantity = quantity;
+                renderCart();
+            }
+        }
+
+        
+        function removeFromCart(productId) {
+            delete cart[productId];
+            renderCart();
+        }
+
+       
+        function toggleCart() {
+            var cartElement = document.getElementById('cart');
+            if (cartElement.style.display === 'none') {
+                cartElement.style.display = 'block';
+            } else {
+                cartElement.style.display = 'none';
+            }
+        }
+
+       
+        renderProducts();
+    </script>
+
+
+</body>
+
+</html>
