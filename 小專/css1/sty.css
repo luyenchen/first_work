@@ -390,3 +390,73 @@ p~div{color: aqua;}
 }
 .w-45{width: 45%;}
 .ml-45{margin-left: 45%;}
+/* ----- */
+.news-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.news-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.news-item h2 {
+    color: #ffcc00;
+    margin-left: 0;
+    text-align: left;
+    box-shadow: none;
+    font-size: 1.5em;
+}
+
+.news-item p {
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover,
+.pagination a.active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .container-80 {
+        width: 95%;
+    }
+
+    .news-item h2 {
+        font-size: 1.2em;
+    }
+
+    .news-item p {
+        font-size: 0.9em;
+    }
+}
