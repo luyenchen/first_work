@@ -10,6 +10,7 @@ class Calendar extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'date',
         'time',
         'text',
@@ -18,4 +19,8 @@ class Calendar extends Model
         'detail_address',
         'hourly_rate'
     ];
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
 }

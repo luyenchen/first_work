@@ -18,6 +18,8 @@ class District extends Model
     // 指定可填充的欄位
     protected $fillable = ['district_name', 'cities_id'];
 
+    protected $foreignKey = 'cities_id';
+
     /**
      * 取得該區域所屬的城市
      */

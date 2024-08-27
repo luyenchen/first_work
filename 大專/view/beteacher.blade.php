@@ -8,12 +8,18 @@
     <meta name="base-url" content="{{ url('/') }}">
     <title>Document</title>
     <link rel="stylesheet" href="{{ asset('luyen/findteacher.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/header_footer.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
+<script src="{{ asset('js/nav.js') }}"></script>
+<x-nav />
+<div class="spacer"></div>
 <div>
         <form id="jobForm" method="POST"  >
             @csrf
-            <h2>成為老師</h2>
+            <h2>教書育人</h2>
 
             <div class="form-group">
                 <label for="title">標題:</label>
@@ -49,7 +55,7 @@
                 <label for="hourly_rate">時薪</label>
                 <div class="hourly-rate-inputs">
                     <input type="number" id="hourly_rate" name="hourly_rate" min="0" step="1" required
-                        placeholder="最低">
+                        placeholder="">
                     
                 </div>
             </div>
@@ -90,6 +96,8 @@
             <button type="submit">提交</button>
         </form>
     </div>
+    <div class="spacer"></div>
+    <x-footer_alpha/>
             <script src="{{ asset('luyen/beteacher.js') }}"></script>
 </body>
 </html>

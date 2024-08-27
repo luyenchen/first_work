@@ -9,30 +9,59 @@ body {
     background-color: #f0f0f0;
 }
 
-.calendar {
+.container {
+    display: flex;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 350px;
-    margin-right: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.input-container {
+    width: 300px;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+}
+
+.right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.calendar-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.calendar {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .header {
     background-color: #4CAF50;
     color: white;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 18px;
 }
 
 .header button {
     background: none;
     border: none;
     color: white;
-    font-size: 18px;
+    font-size: 24px;
     cursor: pointer;
+    padding: 0 10px;
 }
 
 .weekdays {
@@ -54,61 +83,90 @@ body {
 
 #days div {
     width: 14.28%;
-    height: 40px;
-    text-align: center;
-    padding: 10px 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    position: relative;
+    transition: background-color 0.3s;
 }
 
 #days div:hover {
-    background-color: #f1f1f1;
+    background-color: #e0e0e0;
 }
 
-.event-indicator {
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    width: 6px;
-    height: 6px;
+.selected-date {
     background-color: #4CAF50;
-    border-radius: 50%;
+    color: white;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+.input-group {
+    margin-bottom: 15px;
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 300px;
-}
-
-.modal-content input, .modal-content button {
+label {
     display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.time-select-container {
+    display: flex;
+    gap: 10px;
+}
+
+.time-select-container select {
+    flex: 1;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.selected-dates {
+    margin-bottom: 15px;
+}
+
+.selected-dates span {
+    display: inline-block;
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 3px;
 }
 
 .event-list {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 300px;
+    border-top: 1px solid #e0e0e0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-list h3 {
+    margin-top: 0;
 }
 
 .event-list ul {
@@ -117,51 +175,37 @@ body {
 }
 
 .event-list li {
+    background-color: #f1f1f1;
     margin-bottom: 10px;
     padding: 10px;
-    background-color: #f1f1f1;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 #submitEvents {
-    display: block;
     width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
-#submitEvents:hover {
-    background-color: #45a049;
+.btn-primary {
+    background-color: #007bff;
 }
 
-.modal-content select, .modal-content input[type="text"], .modal-content input[type="number"] {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-}
-.time-select-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+.btn-primary:hover {
+    background-color: #0056b3;
 }
 
-.time-select-container select {
-    width: 48%; /* 略小於50%以確保兩個select之間有間隔 */
-}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
 
-/* 調整其他輸入框的樣式以保持一致性 */
-.modal-content select, 
-.modal-content input[type="text"], 
-.modal-content input[type="number"] {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-    box-sizing: border-box; /* 確保padding不會增加整體寬度 */
+    .input-container,
+    .right-container {
+        width: 100%;
+    }
+
+    .input-container {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
 }

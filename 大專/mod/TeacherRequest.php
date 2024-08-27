@@ -9,13 +9,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class TeacherRequest extends Model
 {
     protected $fillable = [
-        'title', 'subject_id', 'available_time', 'expected_date',
+        'id','title', 'subject_id', 'available_time', 'expected_date',
         'hourly_rate_min', 'hourly_rate_max', 'city_id',
         'district_ids', 'details', 'status','user_id'
     ];
 
     protected $casts = [
-        'available_time' => 'array',
+        // 'available_time' => 'array',
         'district_ids' => 'array',
         'expected_date' => 'date',
     ];
@@ -91,4 +91,20 @@ class TeacherRequest extends Model
     {
         return $this->belongsToMany(User::class, 'favorites', 'teacher_request_id', 'user_id');
     }
+
+    // 定義與 ContactStudent 的一對多關係
+    public function contactStudents()
+    {
+        return $this->hasMany(ContactStudent::class, 'teacher_requests_id');
+    }
+
+
+    // 從 favorites 表通過 teacher_request_id 找到對應的 teacher_request，然後通過 user_id 找到對應的用戶，並顯示其姓名性別
+
+    public function user()
+    {
+    return $this->belongsTo(User::class);
+    }
+
+
 }

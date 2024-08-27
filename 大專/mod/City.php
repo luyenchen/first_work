@@ -23,4 +23,9 @@ class City extends Model
     {
         return $this->attributes['city'];
     }
+
+    public function districts()
+    {
+        return $this->hasMany(District::class, 'cities_id');  // City 可以擁有多個 District
+    }
 }

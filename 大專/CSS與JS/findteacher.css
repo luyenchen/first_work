@@ -1,10 +1,22 @@
+body {
+    margin: 0; /* 移除默認邊距 */
+    padding: 0; /* 移除默認內邊距 */
+    min-height: 100vh; /* 確保 body 至少和視窗一樣高 */
+    background: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNzY3NzR8MHwxfGFsbHwxfHx8fHx8fHwxNjE3OTQ2NzY2&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+    background-size: cover; /* 確保背景圖片覆蓋整個元素 */
+    display: flex; /* 使用 flexbox 佈局 */
+    flex-direction: column; /* 垂直方向排列子元素 */
+    justify-content: space-between; /* 在頂部和底部之間均勻分配空間 */
+}
 
 #jobForm {
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
-    background-color: aqua;
+    background-color: rgba(255, 204, 0, 0.7); /* #ffcc00 with 70% opacity */
     border-radius: 8px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -28,7 +40,7 @@ input[type="date"] {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #004080;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -47,7 +59,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: blue;
 }
 
 #districts-container {
@@ -97,5 +109,9 @@ button:hover {
 .clearfix::after{
     content: '';
     display: table;
+    clear: both;
+}
+.spacer {
+    height: 40px; /* 可以根據需要調整高度 */
     clear: both;
 }

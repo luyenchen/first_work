@@ -5,8 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const hourlyRateMin = document.getElementById('hourly_rate_min');
     const hourlyRateMax = document.getElementById('hourly_rate_max');
     const subjectSelect = document.getElementById('subject');
+    const expectedDateInput = document.getElementById('expected_date');
     // 獲取基礎URL
     const baseUrl = document.querySelector('meta[name="base-url"]').getAttribute('content');
+
+    // 設置日期輸入的最小值為明天
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+    expectedDateInput.setAttribute('min', tomorrowFormatted);
 
     // 獲取城市列表
     fetch(`${baseUrl}/cities`)
@@ -195,6 +202,15 @@ document.addEventListener('DOMContentLoaded', function() {
         let hourlyRateMax = parseInt(formData.get('hourly_rate_max'));
         if (isNaN(hourlyRateMin) || isNaN(hourlyRateMax) || hourlyRateMin > hourlyRateMax) {
             console.log('Invalid hourly rate range');  // 調試用
+            isValid = false;
+        }
+
+        // 檢查日期是否在允許的範圍內
+        const selectedDate = new Date(formData.get('expected_date'));
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        if (selectedDate <= today) {
+            console.log('Invalid date selected');  // 調試用
             isValid = false;
         }
 

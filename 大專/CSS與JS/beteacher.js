@@ -165,14 +165,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 選擇履歷按鈕點擊事件
-    if (selectResumeBtn) {
-        selectResumeBtn.addEventListener('click', function() {
-            // 這裡應該打開一個模態框或導航到一個頁面來選擇履歷
+    // if (selectResumeBtn) {
+    //     selectResumeBtn.addEventListener('click', function() {
+    //         // 這裡應該打開一個模態框或導航到一個頁面來選擇履歷
             
-            selectedResume.style.display = 'block';
-            resumeName.textContent = '示例履歷';
-        });
-    }
+    //         selectedResume.style.display = 'block';
+    //         resumeName.textContent = '示例履歷';
+    //     });
+    // }
 
     // 表單驗證函數
     function validateForm(formData) {

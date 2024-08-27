@@ -31,7 +31,7 @@ class TeacherController extends Controller
 
             $id = DB::table('teacher_requests')->insertGetId($validatedData);
 
-            return response()->json(['message' => '請求已成功儲存', 'id' => $id]);
+            return response()->json(['message' => '成功送出', 'id' => $id]);
         } catch (\Exception $e) {
             \Log::error('Error in storeRequest: ' . $e->getMessage());
             return response()->json(['error' => '服務器錯誤，請稍後再試'], 500);

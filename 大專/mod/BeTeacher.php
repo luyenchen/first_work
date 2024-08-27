@@ -46,10 +46,10 @@ class BeTeacher extends Model
         ];
     }
 
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function subject()
     {
@@ -64,5 +64,16 @@ class BeTeacher extends Model
     public function districts()
     {
         return $this->belongsToMany(District::class);
+    }
+
+    // 定義與 FavoriteStudent 的關聯
+    public function favorites()
+    {
+        return $this->hasMany(FavoriteStudent::class, 'be_teachers_id');
+    }
+
+    public function contactTeacher()
+    {
+        return $this->hasMany(ContactTeacher::class, 'be_teacher_id');
     }
 }
